@@ -6,9 +6,9 @@ import './style/App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>Registro de motoristas</h1>
+      <div className="App">        
         <div className="UserRegister">
+          <h1>Registro de motoristas</h1>
           <label>NOME</label>
           <Input placeholder="nome" inputClass="input"/>
 
@@ -27,7 +27,10 @@ class App extends Component {
           <label>CPF</label>
           <Input placeholder="XXX.XXX.XXX-XX" inputClass="input"/>
         </div>
-
+        
+        <div className="UsersList">
+          <h1>Lista de Motoristas</h1>
+        </div>
       </div>
     );
   }
