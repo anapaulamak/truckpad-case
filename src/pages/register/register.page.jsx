@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './register.page.styles.scss';
+import { Input } from './../../components/input/input.component'
 
 export const RegisterPage = props => {
 	const [driver, setDriver] = useState({
@@ -25,47 +26,48 @@ export const RegisterPage = props => {
 			case 0:
 				return (
 					<form className="UserRegister">
-						<p>Nome</p>
-						<input placeholder="nome"
-									 className="input"
+
+						<Input inputTitle="Nome"
+									 placeholder="nome"
+									 inputClass="input"
 									 name="DriverName"
 									 value={driver.DriverName}
 									 onChange={handleOnChange}/>
+
+						<Input inputTitle="CPF"
+									 placeholder="XXX.XXX.XXX-XX"
+									 inputClass="input"
+								 	 name="DriverCpf"
+									 value={driver.DriverDpf}
+									 onChange={handleOnChange}/>
 	
-						<p>CPF</p>
-						<input placeholder="XXX.XXX.XXX-XX"
-										className="input"
-										name="DriverCpf"
-										value={driver.DriverDpf}
-										onChange={handleOnChange}/>
+						<Input inputTitle="Telefone"
+									 placeholder="telefone"
+									 inputClass="input"
+								 	 name="DriverPhone"
+									 value={driver.DriverPhone}
+									 onChange={handleOnChange}/>
+
+						<Input inputTitle="Data de nascimento"
+									 placeholder="01/01/2001"
+									 inputClass="input"
+									 name="DriverBirth"
+									 value={driver.DriverBirth}
+									 onChange={handleOnChange}/>
+
+						<Input inputTitle="CNH"
+						       placeholder="numero cnh"
+									 inputClass="input"
+									 name="DriverCnh"
+									 value={driver.DriverCnh}
+									 onChange={handleOnChange}/>
 	
-						<p>Telefone</p>
-						<input placeholder="telefone"
-										className="input"
-										name="DriverPhone"
-										value={driver.DriverPhone}
-										onChange={handleOnChange}/>
-	
-						<p>Data de nascimento</p>
-						<input placeholder="01/01/2001"
-										className="input"
-										name="DriverBirth"
-										value={driver.DriverBirth}
-										onChange={handleOnChange}/>
-	
-						<p>CNH</p>
-						<input placeholder="numero cnh"
-										className="input"
-										name="DriverCnh"
-										value={driver.DriverCnh}
-										onChange={handleOnChange}/>
-	
-						<p>Tipo de CNH</p>
-						<input placeholder="A"
-										className="input"
-										name="DriverCnhType"
-										value={driver.DriverCnhType}
-										onChange={handleOnChange}/>
+						<Input inputTitle="Tipo de CNH"
+									 placeholder="A"
+									 inputClass="input"
+									 name="DriverCnhType"
+									 value={driver.DriverCnhType}
+									 onChange={handleOnChange}/>
 	
 					<button type="submit">Adicionar</button>
 				</form>
@@ -75,12 +77,14 @@ export const RegisterPage = props => {
 					<div className="UsersList">
 					<table>
 						<thead>
-							<td>Nome</td>
-							<td>Telefone</td>
-							<td>Data de Nasc</td>
-							<td>CNH</td>
-							<td>Tipo de CNH</td>
-							<td>CPF</td>
+							<tr>
+								<th>Nome</th>
+								<th>Telefone</th>
+								<th>Data de Nasc</th>
+								<th>CNH</th>
+								<th>Tipo de CNH</th>
+								<th>CPF</th>
+							</tr>
 						</thead>
 						<tbody>
 						</tbody>
