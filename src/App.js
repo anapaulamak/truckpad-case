@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
+import './App.scss';
 import { RegisterPage } from './pages/register/register.page'
-import './style/App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">        
-        <RegisterPage />
+      <div className="App">
+          <RegisterPage />
       </div>
-    );
+    )
   }
 }
 
