@@ -1,0 +1,47 @@
+.table-list-drivers{
+  color: #52545B;
+  thead{
+    text-align: left;
+    tr th{
+      font-size: 18px;
+      padding: 10px 10px 25px 10px;
+    }
+  }
+  tbody{
+    text-align: left;
+    tr td{
+      font-size: 15px;
+      padding: 15px;
+      border-bottom: solid 1px #efefef;
+    }
+  }
+  .btn-action {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    img{
+      width: 18px;
+      opacity: .6;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .table-list-drivers {
+    thead {
+      display: none;
+    }
+    tbody tr{
+      display: flex;
+      flex-direction: column;
+      td{
+        border-bottom: none;
+        text-align: center;
+      }
+      .table-list-drivers-actions{
+        border-bottom: solid 1px #efefef;
+      }
+    }
+  }
+}
