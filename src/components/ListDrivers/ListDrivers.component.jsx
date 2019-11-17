@@ -29,10 +29,10 @@ export const DriverList = (props) => {
                     <td>{ driverItem.driverCnhType }</td>
 
                     <td className="table-list-drivers-actions">
-                      <button onClick={() => props.editDriver(driverItem) } className="btn-action">
+                      <button className="btn-action" onClick={() => props.editDriver(driverItem) }>
                         <img src={ EditIcon } alt="Editar"></img>
                       </button>
-                      <button onClick={() => props.deleteDriver(driverItem.id) } className="btn-action">
+                      <button className="btn-action" onClick={() => props.deleteDriver(driverItem.id) }>
                         <img src={ DeleteIcon } alt="Deletar"></img>
                       </button>
                     </td>

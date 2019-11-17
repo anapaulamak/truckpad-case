@@ -4,7 +4,7 @@ import { AddDriver } from '../components/AddDriver/AddDriver.component';
 import { EditDriver } from '../components/EditDriver/EditDriver.component';
 import './Register.styles.scss';
 
-function RegisterPage () {
+function RegisterPage (props) {
   const [driver, setDriver] = useState({
     id: null,
     driverId: 1,
@@ -18,15 +18,45 @@ function RegisterPage () {
     driverItem: {},
     driverItems: [
       {
-        id:'1',
-        driverId:'1',
-        driverName: 'Ana Paula M. Aoyama Kajihara',
-        driverPhone: '11 986458116',
-        driverBirth: '05-08-1988',
-        driverCnh: '111111111',
-        driverCnhType: 'A',
-        driverCpf:'22222222222',
-      }
+        id: '1',
+        driverId: '1',
+        driverName: 'Pouca Tripa',
+        driverPhone: '11999999999',
+        driverBirth: '1976-09-22',
+        driverCpf: '11111111111',
+        driverCnh: '22222222222',
+        driverCnhType: 'B'
+      },
+      {
+        id: '2',
+        driverId: '2',
+        driverName: 'João de Barro',
+        driverPhone: '11888888888',
+        driverBirth: '1980-03-10',
+        driverCpf: '22222222222',
+        driverCnh: '33333333333',
+        driverCnhType: 'A,B'
+      },
+      {
+        id: '3',
+        driverId: '3',
+        driverName: 'Maria de Silva',
+        driverPhone: '11777777777',
+        driverBirth: '1985-07-17',
+        driverCpf: '44444444444',
+        driverCnh: '33333333333',
+        driverCnhType: 'A,B,C'
+      },
+      {
+        id: '4',
+        driverId: '4',
+        driverName: 'Joana Alves',
+        driverPhone: '11666666666',
+        driverBirth: '1988-01-03',
+        driverCpf: '5555555555',
+        driverCnh: '44444444444',
+        driverCnhType: 'D'
+      },
     ],
     editing: false,
     page:0
@@ -68,13 +98,9 @@ function RegisterPage () {
   const deleteDriver = (driverId) => {
     const driverItems = driver.driverItems.filter( item => item.driverId !== driverId );
     setDriver({...driver, driverItems: driverItems});
-    if(driver.editing === true) {
-      window.location.reload();
-    }
   }
 
   const editDriver = (driverItem) => {
-    setEditing(true);
     setDriver({
       ...driver,
       driverName: driverItem.driverName,
@@ -84,12 +110,22 @@ function RegisterPage () {
       driverCnhType: driverItem.driverCnhType,
       driverCpf: driverItem.driverCpf,
       driverItem: driverItem,
-      page: 0
+      page: 0,
+      editing: true
     })
   }
   
-  const setEditing = (value) => {
-    setDriver({...driver, editing: value })
+  const cancelEditing = (event) => {
+    setDriver({
+      ...driver,
+      driverName: '',
+      driverPhone: '',
+      driverBirth: '',
+      driverCnh: '',
+      driverCnhType: '',
+      driverCpf:'',
+      editing: false
+    })
   }
 
   const updateDriver = (event) => {
@@ -118,7 +154,8 @@ function RegisterPage () {
       driverCnh: '',
       driverCnhType: '',
       driverCpf: '',
-      driverItems: driverItems
+      driverItems: driverItems,
+      page: 1
     });
   }
 
@@ -133,7 +170,7 @@ function RegisterPage () {
           <div className="App-main">
           { 
             driver.editing ? (
-            <EditDriver 
+            <EditDriver
               driverName={ driver.driverName }
               driverPhone={ driver.driverPhone }
               driverBirth={ driver.driverBirth }
@@ -141,7 +178,7 @@ function RegisterPage () {
               driverCnhType={ driver.driverCnhType }
               driverCpf={ driver.driverCpf }
               handleInputChange={ handleInputChange }
-              setEditing={ setEditing }
+              cancelEditing={ cancelEditing }
               updateDriver={ updateDriver }
             />
             ) : (

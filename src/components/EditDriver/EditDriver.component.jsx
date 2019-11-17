@@ -29,8 +29,8 @@ export const EditDriver = props => {
         <input type="text" name="driverCpf" value={props.driverCpf} onChange={ props.handleInputChange} />
       </div>
       <div>
-        <button onClick={ props.updateDriver } className="btn-action"> Atualizar </button>
-        <button onClick={() => props.setEditing(false)} className="btn-action"> Cancelar </button>
+        <button className="btn-action" onClick={ props.updateDriver } > Atualizar </button>
+        <button className="btn-action" onClick={ props.cancelEditing } > Cancelar </button>
       </div>
     </form>
   )
