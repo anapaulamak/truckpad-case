@@ -11,9 +11,9 @@ export const DriverList = (props) => {
             <th>Nome</th>
             <th>Telefone</th>
             <th>Data de nascimento</th>
+            <th>CPF</th>
             <th>CNH</th>
             <th>Tipo de CNH</th>
-            <th>CPF</th>
           </tr>
         </thead>
         <tbody>
@@ -28,7 +28,7 @@ export const DriverList = (props) => {
                     <td>{ driverItem.driverCnh }</td>
                     <td>{ driverItem.driverCnhType }</td>
 
-                    <td>
+                    <td className="table-list-drivers-actions">
                       <button onClick={() => props.editDriver(driverItem) } className="btn-action">
                         <img src={ EditIcon } alt="Editar"></img>
                       </button>

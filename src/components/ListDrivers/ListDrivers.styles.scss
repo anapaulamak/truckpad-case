@@ -26,3 +26,22 @@
     }
   }
 }
+
+@media (max-width: 750px) {
+  .table-list-drivers {
+    thead {
+      display: none;
+    }
+    tbody tr{
+      display: flex;
+      flex-direction: column;
+      td{
+        border-bottom: none;
+        text-align: center;
+      }
+      .table-list-drivers-actions{
+        border-bottom: solid 1px #efefef;
+      }
+    }
+  }
+}
