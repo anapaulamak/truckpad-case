@@ -9,6 +9,7 @@
     align-items: flex-start;
     label{
       font-size: 18px;
+      color: #52545B;
     }
     input{
       padding: 10px 15px;
@@ -16,18 +17,19 @@
       width: 250px;
       font-size: 12px;
       border-radius: 2px;
-      border: solid 1px gray;
+      border: solid 1px #d8d8d8;
       outline: none;
     }
   }
   .btn-action{
     padding: 10px 20px;
-    margin: 0px 10px;
+    margin: 25px 10px 0px 10px;
     border: none;
     border-radius: 5px;
     background-color: #52545B;
     color: #fff;
     outline: none;
     cursor: pointer;
+    text-transform: uppercase;
   }
 }

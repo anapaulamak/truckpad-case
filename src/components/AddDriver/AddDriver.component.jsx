@@ -28,7 +28,7 @@ export const AddDriver = props => {
         <label>CPF</label>
         <input type="text" name="driverCpf" value={props.driverCpf} onChange={ props.handleInputChange} />
       </div>
-      <button className="btn-action"> Adicionar Motorista </button>
+      <button className="btn-action"> Adicionar </button>
     </form>
   )
 }
