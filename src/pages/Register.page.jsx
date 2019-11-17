@@ -175,13 +175,15 @@ function RegisterPage () {
   }
 
   return (
-    <div className="App">
-      <ul>
-        <li onClick={handleTab(0)}>Cadastro</li>
-        <li onClick={handleTab(1)}>Lista</li>
-      </ul>
+    <div className="RegisterPage">
+      <div className="RegisterPage-nav">
+        <ul>
+          <li className={(driver.page === 0) ? "link-active" : ""} onClick={handleTab(0)}>Cadastro</li>
+          <li className={(driver.page === 1) ? "link-active" : ""} onClick={handleTab(1)}>Lista</li>
+        </ul>
+      </div>
 
-      <div>
+      <div className="RegisterPage-content">
         { handlePage() }
       </div>
     </div>
