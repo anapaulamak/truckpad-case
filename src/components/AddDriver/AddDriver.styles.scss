@@ -1,0 +1,33 @@
+.form-add-driver{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  .form-group{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    label{
+      font-size: 18px;
+    }
+    input{
+      padding: 10px 15px;
+      margin: 10px 0px 15px 0px;
+      width: 250px;
+      font-size: 12px;
+      border-radius: 2px;
+      border: solid 1px gray;
+      outline: none;
+    }
+  }
+  .btn-action{
+    padding: 10px 20px;
+    margin: 0px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #52545B;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+  }
+}

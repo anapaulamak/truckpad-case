@@ -1,7 +1,7 @@
 import React from 'react';
-import { DriverList } from './components/DriverList';
-import { AddDriver } from './components/AddDriver';
-import { EditDriver } from './components/EditDriver';
+import { DriverList } from './components/ListDrivers/ListDrivers.component';
+import { AddDriver } from './components/AddDriver/AddDriver.component';
+import { EditDriver } from './components/EditDriver/EditDriver.component';
 import './App.scss';
 
 class App extends React.Component {
@@ -19,7 +19,17 @@ class App extends React.Component {
       driverCpf:'',
       status: false,
       driverItem: {},
-      driverItems: [],
+      driverItems: [
+        {
+          driverId:'1',
+          driverName: 'Ana Paula M. Aoyama Kajihara',
+          driverPhone: '11 986458116',
+          driverBirth: '05-08-1988',
+          driverCnh: '111111111',
+          driverCnhType: 'A',
+          driverCpf:'22222222222',
+        }
+      ],
       editing: false
     };
     
@@ -86,14 +96,13 @@ class App extends React.Component {
       driverBirth:driverItem.driverBirth,
       driverCnh:driverItem.driverCnh,
       driverCnhType:driverItem.driverCnhType,
-      driverCnhType:driverItem.driverCnhType,
+      driverCpf:driverItem.driverCpf,
       driverItem: driverItem
     });
     console.log(driverItem);
   }
 
   setEditing(value) {
-    if(typeof value !== 'boolean') { throw " This value must either be true or false"}
     this.setState({
       editing: value
     })
@@ -121,11 +130,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { driverName, driverPhone, driverBirth, driverCnh, driverCnhType, driverCpf, driverItems, editing } = this.state;
+    const { driverItems, editing } = this.state;
       return (
         <div className="App">
 
-          <div className="row App-main">
+          <div className="App-main">
           { 
             editing  ? (
             <EditDriver 
@@ -154,13 +163,14 @@ class App extends React.Component {
           }
           </div>
 
-          <div className="row App-main">
+          <div className="App-main">
             <DriverList 
               driverItems= {driverItems} 
               deleteDriver={this.deleteDriver}
               editDriver={this.editDriver}
             />
           </div>
+
         </div>
       );
     }

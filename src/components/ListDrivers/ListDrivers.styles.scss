@@ -1,0 +1,25 @@
+.table-list-drivers{
+  thead{
+    text-align: left;
+    tr th{
+      font-size: 18px;
+      padding: 10px;
+    }
+  }
+  tbody{
+    text-align: left;
+    tr td{
+      font-size: 16px;
+      padding: 10px 15px;
+    }
+  }
+  .btn-action {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    img{
+      width: 18px;
+    }
+  }
+}
