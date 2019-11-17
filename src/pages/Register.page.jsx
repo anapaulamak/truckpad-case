@@ -18,6 +18,7 @@ function RegisterPage () {
     driverItem: {},
     driverItems: [
       {
+        id:'1',
         driverId:'1',
         driverName: 'Ana Paula M. Aoyama Kajihara',
         driverPhone: '11 986458116',
@@ -48,7 +49,7 @@ function RegisterPage () {
       driverCnh: driver.driverCnh,
       driverCnhType: driver.driverCnhType,
       driverCpf: driver.driverCpf,
-      status: driver.status
+      status: driver.status,
     };
     setDriver({
       ...driver,
@@ -59,7 +60,8 @@ function RegisterPage () {
       driverCnhType: '',
       driverCpf:'',
       driverItem: driverItem,
-      driverItems: [...driver.driverItems, driverItem]
+      driverItems: [...driver.driverItems, driverItem],
+      page: 1
     })
   }
 
@@ -82,6 +84,7 @@ function RegisterPage () {
       driverCnhType: driverItem.driverCnhType,
       driverCpf: driverItem.driverCpf,
       driverItem: driverItem,
+      page: 0
     })
   }
   
