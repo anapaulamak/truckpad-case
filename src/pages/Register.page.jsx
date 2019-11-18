@@ -59,7 +59,7 @@ function RegisterPage (props) {
       },
     ],
     editing: false,
-    page:0
+    page:0,
   })
 
   const handleInputChange = (event) => {
@@ -67,32 +67,36 @@ function RegisterPage (props) {
   }
 
   const addDriver = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    if (!driver.driverName) return;
-    const driverItem = {
-      id: driver.driverItems.length + 1,
-      driverId: driver.driverItems.length + 1,
-      driverName: driver.driverName,
-      driverPhone: driver.driverPhone,
-      driverBirth: driver.driverBirth,
-      driverCnh: driver.driverCnh,
-      driverCnhType: driver.driverCnhType,
-      driverCpf: driver.driverCpf,
-      status: driver.status,
-    };
-    setDriver({
-      ...driver,
-      driverName: '',
-      driverPhone: '',
-      driverBirth: '',
-      driverCnh: '',
-      driverCnhType: '',
-      driverCpf:'',
-      driverItem: driverItem,
-      driverItems: [...driver.driverItems, driverItem],
-      page: 1
-    })
+    if(!driver.driverName || !driver.driverPhone || !driver.driverBirth || !driver.driverCnh || !driver.driverCnhType || !driver.driverCpf ) {
+      document.querySelector('.warn').style.display = 'block';
+    } else {
+      const driverItem = {
+        id: driver.driverItems.length + 1,
+        driverId: driver.driverItems.length + 1,
+        driverName: driver.driverName,
+        driverPhone: driver.driverPhone,
+        driverBirth: driver.driverBirth,
+        driverCnh: driver.driverCnh,
+        driverCnhType: driver.driverCnhType,
+        driverCpf: driver.driverCpf,
+        status: driver.status,
+      };
+      setDriver({
+        ...driver,
+        driverName: '',
+        driverPhone: '',
+        driverBirth: '',
+        driverCnh: '',
+        driverCnhType: '',
+        driverCpf:'',
+        driverItem: driverItem,
+        driverItems: [...driver.driverItems, driverItem],
+        page: 1
+      })
+    }
+
   }
 
   const deleteDriver = (driverId) => {
@@ -137,26 +141,30 @@ function RegisterPage (props) {
     const updatedCnhType = driver.driverCnhType;
     const updatedCpf = driver.driverCpf;
 
-    const updatedDriverInfos = Object.assign({}, driver.driverItem, {
-      driverName: updatedName,
-      driverPhone: updatedPhone,
-      driverBirth: updatedBirth,
-      driverCnh: updatedCnh,
-      driverCnhType: updatedCnhType,
-      driverCpf: updatedCpf,
-    })
-    const driverItems = driver.driverItems.map((driverItem) => (driverItem.id === driver.driverItem.id ? updatedDriverInfos : driverItem));
-    setDriver({ 
-      ...driver,
-      driverName:'',
-      driverPhone: '',
-      driverBirth: '',
-      driverCnh: '',
-      driverCnhType: '',
-      driverCpf: '',
-      driverItems: driverItems,
-      page: 1
-    });
+    if(!driver.driverName || !driver.driverPhone || !driver.driverBirth || !driver.driverCnh || !driver.driverCnhType || !driver.driverCpf ) {
+      document.querySelector('.warn').style.display = 'block';
+    } else {
+      const updatedDriverInfos = Object.assign({}, driver.driverItem, {
+        driverName: updatedName,
+        driverPhone: updatedPhone,
+        driverBirth: updatedBirth,
+        driverCnh: updatedCnh,
+        driverCnhType: updatedCnhType,
+        driverCpf: updatedCpf,
+      })
+      const driverItems = driver.driverItems.map((driverItem) => (driverItem.id === driver.driverItem.id ? updatedDriverInfos : driverItem));
+      setDriver({ 
+        ...driver,
+        driverName:'',
+        driverPhone: '',
+        driverBirth: '',
+        driverCnh: '',
+        driverCnhType: '',
+        driverCpf: '',
+        driverItems: driverItems,
+        page: 1
+      });
+    }
   }
 
   const handleTab = index => event => {

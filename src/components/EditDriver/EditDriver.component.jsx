@@ -32,6 +32,7 @@ export const EditDriver = props => {
         <button className="btn-action" onClick={ props.updateDriver } > Atualizar </button>
         <button className="btn-action" onClick={ props.cancelEditing } > Cancelar </button>
       </div>
+      <span className="warn">*Preencher todos os campos acima</span>
     </form>
   )
 }
