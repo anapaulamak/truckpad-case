@@ -5,6 +5,6 @@ Case truckpad
 2. Clonar o repositório para a máquina local
 3. Entrar no repositório
 4. Apagar os modulos do node: $ rm -rf node_modules/ 
-5. Reinstalar o node_modules: $ npm install 
+5. Reinstalar o node_modules: $ sudo npm install 
 6. Iniciar a aplicação: $ npm start
 7. Aplicação em : http://localhost:3000/
