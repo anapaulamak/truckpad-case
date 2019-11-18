@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
+import axios from "axios";
 import { DriverList } from '../components/ListDrivers/ListDrivers.component';
 import { AddDriver } from '../components/AddDriver/AddDriver.component';
 import { EditDriver } from '../components/EditDriver/EditDriver.component';
@@ -16,52 +17,20 @@ function RegisterPage (props) {
     driverCpf:'',
     status: false,
     driverItem: {},
-    driverItems: [
-      {
-        id: '1',
-        driverId: '1',
-        driverName: 'Pouca Tripa',
-        driverPhone: '11999999999',
-        driverBirth: '1976-09-22',
-        driverCpf: '11111111111',
-        driverCnh: '22222222222',
-        driverCnhType: 'B'
-      },
-      {
-        id: '2',
-        driverId: '2',
-        driverName: 'João de Barro',
-        driverPhone: '11888888888',
-        driverBirth: '1980-03-10',
-        driverCpf: '22222222222',
-        driverCnh: '33333333333',
-        driverCnhType: 'A,B'
-      },
-      {
-        id: '3',
-        driverId: '3',
-        driverName: 'Maria de Silva',
-        driverPhone: '11777777777',
-        driverBirth: '1985-07-17',
-        driverCpf: '44444444444',
-        driverCnh: '33333333333',
-        driverCnhType: 'A,B,C'
-      },
-      {
-        id: '4',
-        driverId: '4',
-        driverName: 'Joana Alves',
-        driverPhone: '11666666666',
-        driverBirth: '1988-01-03',
-        driverCpf: '5555555555',
-        driverCnh: '44444444444',
-        driverCnhType: 'D'
-      },
-    ],
+    driverItems: [],
     editing: false,
     page:0,
   })
 
+  useEffect(() => {
+    axios
+      .get('https://api.myjson.com/bins/1db9wi')
+      .then(({ data }) => {
+        setDriver({...driver, driverItems: data});
+      });
+  },[]);
+
+ 
   const handleInputChange = (event) => {
     setDriver({ ...driver, [event.target.name]: event.target.value });
   }
@@ -96,7 +65,6 @@ function RegisterPage (props) {
         page: 1
       })
     }
-
   }
 
   const deleteDriver = (driverId) => {
