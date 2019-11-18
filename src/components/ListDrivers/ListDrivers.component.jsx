@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ListDrivers.styles.scss';
 import EditIcon from '../../assets/pencil.svg';
 import DeleteIcon from '../../assets/rubbish.svg'
