@@ -12,6 +12,7 @@ export const AddDriver = props => {
           placeholder="nome"
           value={props.driverName}
           onChange={ props.handleInputChange}
+          className="input-driver-name"
         />
       </div>
       <div className="form-group">
@@ -22,6 +23,7 @@ export const AddDriver = props => {
           placeholder="telefone"
           value={props.driverPhone}
           onChange={ props.handleInputChange}
+          className="input-driver-phone"
         />
       </div>
       <div className="form-group">
@@ -32,6 +34,7 @@ export const AddDriver = props => {
           placeholder="DD/MM/AAAA"
           value={props.driverBirth}
           onChange={ props.handleInputChange}
+          className="input-driver-birth"
         />
       </div>
       <div className="form-group">
@@ -42,6 +45,7 @@ export const AddDriver = props => {
           placeholder="XXXXXXXXXXX"
           value={props.driverCnh}
           onChange={ props.handleInputChange}
+          className="input-driver-cnh"
         />
       </div>
       <div className="form-group">
@@ -52,6 +56,7 @@ export const AddDriver = props => {
           placeholder="A, B"
           value={props.driverCnhType}
           onChange={ props.handleInputChange}
+          className="input-driver-cnh-type"
         />
       </div>
       <div className="form-group">
@@ -62,6 +67,8 @@ export const AddDriver = props => {
           placeholder="XXX.XXX.XXX-XX"
           value={props.driverCpf}
           onChange={ props.handleInputChange}
+          className="input-driver-cpf"
+          
         />
       </div>
       <button className="btn-action"> Adicionar </button>

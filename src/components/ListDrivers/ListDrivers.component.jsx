@@ -21,12 +21,12 @@ export const DriverList = (props) => {
           props.driverItems.length > 0 ? (
             props.driverItems.map((driverItem) => (
                 <tr key={driverItem.id}>
-                  <td>{ driverItem.driverName }</td>
-                  <td>{ driverItem.driverPhone }</td>
-                  <td>{ driverItem.driverBirth }</td>
-                  <td>{ driverItem.driverCpf }</td>
-                  <td>{ driverItem.driverCnh }</td>
-                  <td>{ driverItem.driverCnhType }</td>
+                  <td className='driver-name'>{ driverItem.driverName }</td>
+                  <td className='driver-phone'>{ driverItem.driverPhone }</td>
+                  <td className='driver-birth'>{ driverItem.driverBirth }</td>
+                  <td className='driver-cpf'>{ driverItem.driverCpf }</td>
+                  <td className='driver-cnh'>{ driverItem.driverCnh }</td>
+                  <td className='driver-cnh-type'>{ driverItem.driverCnhType }</td>
 
                   <td className="table-list-drivers-actions">
                     <button className="btn-action" onClick={() => props.editDriver(driverItem) }>
